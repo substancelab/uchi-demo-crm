@@ -7,3 +7,55 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+
+require "faker"
+
+# Clean out the existing data
+[ Role, Person, Company, Contact, Lead ].each(&:delete_all)
+
+# Create Companies
+7.times do
+  Company.create!(
+    name: Faker::Company.unique.name,
+    tagline: Faker::Company.catch_phrase
+  )
+end
+
+# Create people
+15.times do
+  Person.create!(
+    first_name: Faker::Name.first_name,
+    last_names: Faker::Name.last_name
+  )
+end
+
+# Assign roles
+20.times do
+  company = Company.order("RANDOM()").first
+  person = Person.order("RANDOM()").first
+
+  Role.create!(
+    company: company,
+    person: person,
+    title: Faker::Job.title
+  )
+end
+
+# Create leads
+4.times do
+  Lead.create!(
+    name: Faker::Commerce.product_name,
+    state: [ "new", "contacted", "qualified", "won", "lost" ].sample
+  )
+end
+
+# Assign contacts to leads
+Lead.all.each do |lead|
+  rand(1..3).times do
+    recipient = [ Company.order("RANDOM()").first, Person.order("RANDOM()").first ].sample
+    Contact.create!(
+      lead: lead,
+      contactable: recipient,
+    )
+  end
+end
