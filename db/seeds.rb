@@ -16,7 +16,7 @@ PEOPLE = 15
 ROLES = 12
 
 # Clean out the existing data
-[ Role, Person, Company, Contact, Lead ].each(&:delete_all)
+[ Role, Person, Company, Contact, Lead, User ].each(&:delete_all)
 
 # Create Companies
 COMPANIES.times do
@@ -64,4 +64,9 @@ Lead.all.each do |lead|
       contactable: recipient,
     )
   end
+end
+
+# Create an admin user
+User.find_or_create_by!(email_address: "admin@example.com") do |user|
+  user.password = "password"
 end
