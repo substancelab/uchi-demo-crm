@@ -21,6 +21,7 @@ ROLES = 12
 # Create Companies
 COMPANIES.times do
   Company.create!(
+    logo: File.open(Rails.root.join("test", "fixtures", "files", "logos", "#{rand(1..12)}.png")),
     name: Faker::Company.unique.name,
     tagline: Faker::Company.catch_phrase
   )
