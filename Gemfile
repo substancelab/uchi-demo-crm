@@ -68,3 +68,7 @@ end
 gem "faker"
 
 gem "uchi", github: "substancelab/uchi"
+
+# This is used for styling the login pages
+gem "flowbite-components"
+gem "tailwindcss-rails", ">= 4.3.0"
