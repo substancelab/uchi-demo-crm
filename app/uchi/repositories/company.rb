@@ -8,7 +8,8 @@ module Uchi
           Field::Id.new(:id),
           Field::String.new(:name),
           Field::String.new(:tagline),
-          Field::Image.new(:logo)
+          Field::Image.new(:logo),
+          Field::HasMany.new(:people)
         ]
       end
     end

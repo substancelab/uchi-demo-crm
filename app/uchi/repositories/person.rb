@@ -7,7 +7,8 @@ module Uchi
         [
           Field::Id.new(:id),
           Field::String.new(:first_name),
-          Field::String.new(:last_names)
+          Field::String.new(:last_names),
+          Field::HasMany.new(:companies)
         ]
       end
 
