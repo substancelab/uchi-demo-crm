@@ -66,3 +66,5 @@ group :test do
 end
 
 gem "faker"
+
+gem "uchi", github: "substancelab/uchi"
