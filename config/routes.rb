@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   mount Uchi::Engine, at: "/uchi"
   namespace :uchi do
     resources :companies
+    resources :people
 
     root to: "companies#index"
   end
