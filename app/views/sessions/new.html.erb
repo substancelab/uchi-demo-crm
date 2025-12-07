@@ -1,11 +1,17 @@
-<%= tag.div(flash[:alert], style: "color:red") if flash[:alert] %>
-<%= tag.div(flash[:notice], style: "color:green") if flash[:notice] %>
+<%= render(Flowbite::Card.new(class: "max-w-md")) do %>
+  <main>
+    <%= tag.div(flash[:alert], style: "color:red") if flash[:alert] %>
+    <%= tag.div(flash[:notice], style: "color:green") if flash[:notice] %>
 
-<%= form_with url: session_path do |form| %>
-  <%= form.email_field :email_address, required: true, autofocus: true, autocomplete: "username", placeholder: "Enter your email address", value: params[:email_address] %><br>
-  <%= form.password_field :password, required: true, autocomplete: "current-password", placeholder: "Enter your password", maxlength: 72 %><br>
-  <%= form.submit "Sign in" %>
+    <%= form_with url: session_path do |form| %>
+      <div class="space-y-6 mb-6">
+        <%= render(Flowbite::InputField::Email.new(attribute: :email_address, form: form, input: {options: {autocomplete: "username", autofocus: true, placeholder: "Enter your email address", value: params[:email_address]}})) %>
+        <%= render(Flowbite::InputField::Password.new(attribute: :password, form: form, input: {options: {autocomplete: "current-password", placeholder: "Enter your password", maxlength: 72}})) %>
+      </div>
+
+      <%= render(Flowbite::Button.new) { "Sign in" } %>
+    <% end %>
+
+    <%= link_to "Forgot password?", new_password_path %>
+  </main>
 <% end %>
-<br>
-
-<%= link_to "Forgot password?", new_password_path %>
