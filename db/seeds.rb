@@ -67,6 +67,6 @@ Lead.all.each do |lead|
 end
 
 # Create an admin user
-User.find_or_create_by!(email_address: "admin@example.com") do |user|
+User.find_or_create_by!(email_address: "uchi@example.com") do |user|
   user.password = "password"
 end
