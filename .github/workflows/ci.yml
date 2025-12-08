@@ -83,6 +83,9 @@ jobs:
         with:
           bundler-cache: true
 
+      - name: Set up JS
+        uses: actions/setup-node@v6
+
       - name: Run tests
         env:
           RAILS_ENV: test
