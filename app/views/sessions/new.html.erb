@@ -1,7 +1,13 @@
 <%= render(Flowbite::Card.new(class: "max-w-md")) do %>
   <main>
-    <%= tag.div(flash[:alert], style: "color:red") if flash[:alert] %>
-    <%= tag.div(flash[:notice], style: "color:green") if flash[:notice] %>
+    <h1 class="text-2xl font-bold mb-6 text-center">Uchi CRM Demo</h1>
+
+    <% if flash.any? %>
+      <div class="mb-6">
+        <%= tag.div(flash[:alert], style: "color:red") if flash[:alert] %>
+        <%= tag.div(flash[:notice], style: "color:green") if flash[:notice] %>
+      </div>
+    <% end %>
 
     <%= form_with url: session_path do |form| %>
       <div class="space-y-6 mb-6">
@@ -9,7 +15,7 @@
         <%= render(Flowbite::InputField::Password.new(attribute: :password, form: form, input: {options: {autocomplete: "current-password", placeholder: "Enter your password", maxlength: 72}})) %>
       </div>
 
-      <%= render(Flowbite::Button.new) { "Sign in" } %>
+      <%= render(Flowbite::Button.new(:class => "w-full")) { "Sign in" } %>
     <% end %>
   </main>
 <% end %>
