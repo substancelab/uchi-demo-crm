@@ -1,0 +1,39 @@
+{
+  "ignored_warnings": [
+    {
+      "warning_type": "Dynamic Render Path",
+      "warning_code": 15,
+      "fingerprint": "ebd3b8fca9b6d82d29cdbf0ecbf1a77ccec35d79b78dc0db067eafcd7a032bbf",
+      "check_name": "Render",
+      "message": "Render path contains parameter value",
+      "file": "app/views/sessions/new.html.erb",
+      "line": 14,
+      "link": "https://brakemanscanner.org/docs/warning_types/dynamic_render_path/",
+      "code": "render(action => Flowbite::InputField::Email.new(:attribute => :email_address, :form => form, :input => ({ :options => ({ :autocomplete => \"username\", :autofocus => true, :placeholder => \"Enter your email address\", :value => ((params[:email_address] or \"uchi@example.com\")) }) })), { :locals => ({ :\"flowbite::inputfield::email\" => Flowbite::InputField::Email.new(:attribute => :email_address, :form => form, :input => ({ :options => ({ :autocomplete => \"username\", :autofocus => true, :placeholder => \"Enter your email address\", :value => ((params[:email_address] or \"uchi@example.com\")) }) })) }) })",
+      "render_path": [
+        {
+          "type": "controller",
+          "class": "SessionsController",
+          "method": "new",
+          "line": 6,
+          "file": "app/controllers/sessions_controller.rb",
+          "rendered": {
+            "name": "sessions/new",
+            "file": "app/views/sessions/new.html.erb"
+          }
+        }
+      ],
+      "location": {
+        "type": "template",
+        "template": "sessions/new"
+      },
+      "user_input": "params[:email_address]",
+      "confidence": "Weak",
+      "cwe_id": [
+        22
+      ],
+      "note": ""
+    }
+  ],
+  "brakeman_version": "7.1.1"
+}
