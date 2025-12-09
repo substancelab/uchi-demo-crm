@@ -16,7 +16,7 @@ PEOPLE = 15
 ROLES = 12
 
 # Clean out the existing data
-[ Role, Person, Company, Contact, Lead, User ].each(&:delete_all)
+[ Role, Person, Company, Contact, Lead, User ].each(&:destroy_all)
 
 # Create Companies
 COMPANIES.times do
