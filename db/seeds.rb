@@ -71,7 +71,7 @@ Company.all.each do |company|
   rand(1..4).times do
     Project.create!(
       company: company,
-      name: Faker::App.name,
+      name: Faker::App.unique.name,
       starts_on: Faker::Date.backward(days: 100),
       ends_on: Faker::Date.forward(days: 100)
     )
