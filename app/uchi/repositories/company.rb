@@ -15,7 +15,8 @@ module Uchi
           Field::String.new(:name),
           Field::String.new(:tagline),
           Field::Image.new(:logo),
-          Field::HasMany.new(:people)
+          Field::HasMany.new(:people),
+          Field::HasMany.new(:projects)
         ]
       end
     end
