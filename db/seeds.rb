@@ -66,6 +66,18 @@ Lead.all.each do |lead|
   end
 end
 
+# Create projects for companies
+Company.all.each do |company|
+  rand(1..4).times do
+    Project.create!(
+      company: company,
+      name: Faker::App.name,
+      starts_on: Faker::Date.backward(days: 100),
+      ends_on: Faker::Date.forward(days: 100)
+    )
+  end
+end
+
 # Create an admin user
 User.find_or_create_by!(email_address: "uchi@example.com") do |user|
   user.password = "password"
