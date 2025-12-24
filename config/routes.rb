@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   namespace :uchi do
     resources :companies
     resources :people
+    resources :projects
     resources :roles
 
     root to: "companies#index"
