@@ -3,6 +3,10 @@
 module Uchi
   module Repositories
     class Project < Repository
+      def default_sort_order
+        SortOrder.new(:name, :asc)
+      end
+
       def fields
         [
           Field::Id.new(:id),
