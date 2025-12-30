@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2025_12_07_154316) do
+ActiveRecord::Schema[8.1].define(version: 2025_12_24_103751) do
   create_table "active_storage_attachments", force: :cascade do |t|
     t.bigint "blob_id", null: false
     t.datetime "created_at", null: false
@@ -71,6 +71,17 @@ ActiveRecord::Schema[8.1].define(version: 2025_12_07_154316) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "projects", force: :cascade do |t|
+    t.integer "company_id", null: false
+    t.datetime "created_at", null: false
+    t.date "ends_on"
+    t.string "name"
+    t.date "starts_on"
+    t.string "state"
+    t.datetime "updated_at", null: false
+    t.index ["company_id"], name: "index_projects_on_company_id"
+  end
+
   create_table "roles", force: :cascade do |t|
     t.integer "company_id", null: false
     t.datetime "created_at", null: false
@@ -101,6 +112,7 @@ ActiveRecord::Schema[8.1].define(version: 2025_12_07_154316) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "contacts", "leads"
+  add_foreign_key "projects", "companies"
   add_foreign_key "roles", "companies"
   add_foreign_key "roles", "people"
   add_foreign_key "sessions", "users"
