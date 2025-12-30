@@ -17,6 +17,9 @@ module Uchi
           Field::Image.new(:logo),
           Field::HasMany.new(:people),
           Field::HasMany.new(:projects)
+            .collection_query(lambda { |query|
+              query.reorder(:name)
+            })
         ]
       end
     end
