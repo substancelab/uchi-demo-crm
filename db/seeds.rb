@@ -68,7 +68,7 @@ end
 
 # Create projects for companies
 Company.all.each do |company|
-  rand(1..4).times do
+  rand(1..3).times do
     Project.create!(
       company: company,
       name: Faker::App.unique.name,
