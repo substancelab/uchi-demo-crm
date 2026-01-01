@@ -1,15 +1,7 @@
 Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
-  mount Uchi::Engine, at: "/uchi"
-  namespace :uchi do
-    resources :companies
-    resources :people
-    resources :projects
-    resources :roles
-
-    root to: "companies#index"
-  end
+  Uchi.routes.mount(self)
 
   # Authentication routes
   resource :session
