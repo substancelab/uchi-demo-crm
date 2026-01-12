@@ -1,8 +1,8 @@
 GIT
   remote: https://github.com/substancelab/uchi.git
-  revision: 4f8c4fb211a936036c2e63f7f91bac5c5e252d6f
+  revision: f82128e72d8ba9a56e7380f8a04a67b7772cb829
   specs:
-    uchi (0.1.7)
+    uchi (0.1.8)
       rails (>= 7.2)
       turbo-rails
       view_component (>= 4.0)
@@ -369,7 +369,7 @@ GEM
     tailwindcss-ruby (4.1.16-arm64-darwin)
     tailwindcss-ruby (4.1.16-x86_64-linux-gnu)
     tailwindcss-ruby (4.1.16-x86_64-linux-musl)
-    thor (1.4.0)
+    thor (1.5.0)
     thruster (0.1.17)
     thruster (0.1.17-aarch64-linux)
     thruster (0.1.17-arm64-darwin)
@@ -386,9 +386,9 @@ GEM
     unicode-emoji (4.1.0)
     uri (1.1.1)
     useragent (0.16.11)
-    view_component (4.1.1)
-      actionview (>= 7.1.0, < 8.2)
-      activesupport (>= 7.1.0, < 8.2)
+    view_component (4.2.0)
+      actionview (>= 7.1.0)
+      activesupport (>= 7.1.0)
       concurrent-ruby (~> 1)
     web-console (4.2.1)
       actionview (>= 6.0.0)
