@@ -13,6 +13,7 @@ require "faker"
 COMPANIES = 34
 LEADS = 7
 PEOPLE = 15
+PHONE_NUMBERS = 22
 ROLES = 12
 
 # Clean out the existing data
@@ -32,6 +33,16 @@ PEOPLE.times do
   Person.create!(
     first_name: Faker::Name.first_name,
     last_names: Faker::Name.last_name
+  )
+end
+
+# Add PhoneNumbers to People
+PHONE_NUMBERS.times do
+  person = Person.order("RANDOM()").first
+
+  PhoneNumber.create!(
+    owner: person,
+    number: Faker::PhoneNumber.phone_number
   )
 end
 
@@ -76,6 +87,16 @@ Company.all.each do |company|
       ends_on: Faker::Date.forward(days: 100)
     )
   end
+end
+
+# Add PhoneNumbers to Companies
+PHONE_NUMBERS.times do
+  company = Company.order("RANDOM()").first
+
+  PhoneNumber.create!(
+    owner: company,
+    number: Faker::PhoneNumber.phone_number
+  )
 end
 
 # Create an admin user
