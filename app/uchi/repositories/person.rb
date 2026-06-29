@@ -10,6 +10,8 @@ module Uchi
           Field::String.new(:last_names).on(:edit, :new),
           Field::HasMany.new(:companies),
 
+          Field::HasMany.new(:phone_numbers),
+
           Field::String.new(:name)
             .on(:index, :show)
             .searchable(false)
