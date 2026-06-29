@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2025_12_24_103751) do
+ActiveRecord::Schema[8.1].define(version: 2026_06_29_130531) do
   create_table "active_storage_attachments", force: :cascade do |t|
     t.bigint "blob_id", null: false
     t.datetime "created_at", null: false
@@ -69,6 +69,18 @@ ActiveRecord::Schema[8.1].define(version: 2025_12_24_103751) do
     t.string "first_name"
     t.string "last_names"
     t.datetime "updated_at", null: false
+  end
+
+  create_table "phone_numbers", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.string "number", null: false
+    t.integer "owner_id", null: false
+    t.string "owner_type", null: false
+    t.string "status"
+    t.datetime "updated_at", null: false
+    t.string "verification_code"
+    t.datetime "verified_at"
+    t.index ["owner_type", "owner_id"], name: "index_phone_numbers_on_owner"
   end
 
   create_table "projects", force: :cascade do |t|
