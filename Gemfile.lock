@@ -126,7 +126,7 @@ GEM
       tzinfo
     faker (3.5.3)
       i18n (>= 1.8.11, < 2)
-    flowbite-components (0.1.4)
+    flowbite-components (0.3.0)
       view_component (>= 4.0.0)
     fugit (1.12.3)
       et-orbi (~> 1.4)
