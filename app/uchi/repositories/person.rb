@@ -6,6 +6,7 @@ module Uchi
       def fields
         [
           Field::Id.new(:id),
+          Field::Select.new(:title).options([ "Mr.", "Ms.", "Dr.", "Prof.", "" ]),
           Field::String.new(:first_name).on(:edit, :new),
           Field::String.new(:last_names).on(:edit, :new),
           Field::HasMany.new(:companies),
