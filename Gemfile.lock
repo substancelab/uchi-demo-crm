@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/substancelab/uchi.git
-  revision: d6998739466e75361df4179ad4519eb5ce6bddb1
+  revision: 48010b0c0d3539abe03e4efb1039344616e06a16
   specs:
     uchi (0.1.8)
       rails (>= 7.2)
@@ -156,7 +156,7 @@ GEM
     jbuilder (2.15.1)
       actionview (>= 7.0.0)
       activesupport (>= 7.0.0)
-    json (2.20.0)
+    json (2.21.0)
     kamal (2.12.0)
       activesupport (>= 7.0)
       base64 (~> 0.2)
@@ -174,7 +174,7 @@ GEM
     loofah (2.25.1)
       crass (~> 1.0.2)
       nokogiri (>= 1.12.0)
-    mail (2.9.0)
+    mail (2.9.1)
       logger
       mini_mime (>= 0.1.1)
       net-imap
