@@ -1,8 +1,8 @@
 GIT
   remote: https://github.com/substancelab/uchi.git
-  revision: f37932568b7e50d6239061bbe1f83924d97442b0
+  revision: d327fd242d2b2f8d8a5d87511cdd8d44b2b72bdf
   specs:
-    uchi (0.1.8)
+    uchi (0.2.0)
       rails (>= 7.2)
       turbo-rails
       view_component (>= 4.0)
@@ -156,7 +156,7 @@ GEM
     jbuilder (2.15.1)
       actionview (>= 7.0.0)
       activesupport (>= 7.0.0)
-    json (2.21.1)
+    json (2.21.2)
     kamal (2.12.0)
       activesupport (>= 7.0)
       base64 (~> 0.2)
@@ -274,7 +274,7 @@ GEM
       zeitwerk (~> 2.6)
     rainbow (3.1.1)
     rake (13.4.2)
-    rbs (4.1.0)
+    rbs (4.1.1)
       logger
       prism (>= 1.6.0)
       tsort
@@ -402,7 +402,7 @@ GEM
       chronic (>= 0.6.3)
     xpath (3.2.0)
       nokogiri (~> 1.8)
-    zeitwerk (2.8.2)
+    zeitwerk (2.8.3)
 
 PLATFORMS
   aarch64-linux
