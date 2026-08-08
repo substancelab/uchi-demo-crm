@@ -6,7 +6,7 @@ module Uchi
       def fields
         [
           Field::Id.new(:id),
-          Field::BelongsTo.new(:owner),
+          Field::BelongsTo.new(:owner).sortable(false),
           Field::String.new(:number)
         ]
       end
