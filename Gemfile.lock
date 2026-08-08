@@ -1,8 +1,8 @@
 GIT
   remote: https://github.com/substancelab/uchi.git
-  revision: f37932568b7e50d6239061bbe1f83924d97442b0
+  revision: d327fd242d2b2f8d8a5d87511cdd8d44b2b72bdf
   specs:
-    uchi (0.1.8)
+    uchi (0.2.0)
       rails (>= 7.2)
       turbo-rails
       view_component (>= 4.0)
