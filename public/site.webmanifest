@@ -1,6 +1,6 @@
 {
-  "name": "Uchi CRM",
-  "short_name": "CRM",
+  "name": "Uchi CRM Demo",
+  "short_name": "Uchi CRM",
   "icons": [
     {
       "src": "/icon-192.png",
