@@ -9,6 +9,11 @@
       </div>
     <% end %>
 
+    <p class="mb-6 p-4 rounded-base bg-brand-softer border border-brand-medium text-sm text-body">
+      The credentials below are already filled in for you &mdash; just click
+      <span class="font-medium text-heading">Sign in</span> to explore the demo.
+    </p>
+
     <%= form_with url: session_path do |form| %>
       <div class="space-y-6 mb-6">
         <%= render(Flowbite::InputField::Email.new(attribute: :email_address, form: form, input: {options: {autocomplete: "username", autofocus: true, placeholder: "Enter your email address", value: params[:email_address] || "uchi@example.com"}})) %>
@@ -17,5 +22,29 @@
 
       <%= render(Flowbite::Button.new(:class => "w-full")) { "Sign in" } %>
     <% end %>
+
+    <div class="mt-8 pt-6 border-t border-default-medium text-sm text-body">
+      <h2 class="font-medium text-heading mb-2">What am I looking at?</h2>
+      <p class="mb-3">
+        This is a demo CRM built with
+        <%= render(Flowbite::Link.new(href: "https://www.uchiadmin.com")) { "Uchi" } %>,
+        the admin framework for Ruby on Rails. Everything you see here &mdash;
+        the lists, filters, search, and forms &mdash; comes from a handful of
+        repository classes, not hand-written admin screens.
+      </p>
+      <div class="flex items-center gap-4">
+        <p>
+          Level up your scaffolds and build a beautiful, extensible admin panel
+          for your own Rails app in minutes.
+        </p>
+
+        <%= link_to(
+          "https://www.uchiadmin.com",
+          class: Flowbite::Button.classes(style: :secondary, size: :sm) + ["shrink-0", "inline-flex", "items-center", "gap-1.5", "no-underline"]
+        ) do %>
+          Get started
+        <% end %>
+      </div>
+    </div>
   </main>
 <% end %>
