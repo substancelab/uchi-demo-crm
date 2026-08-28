@@ -32,10 +32,25 @@
         the lists, filters, search, and forms &mdash; comes from a handful of
         repository classes, not hand-written admin screens.
       </p>
-      <p>
-        Level up your scaffolds and build a beautiful, extensible admin panel
-        for your own Rails app in minutes.
-      </p>
+      <div class="flex items-center gap-4">
+        <p>
+          Level up your scaffolds and build a beautiful, extensible admin panel
+          for your own Rails app in minutes.
+        </p>
+
+        <%= link_to(
+          "https://www.uchiadmin.com",
+          class: Flowbite::Button.classes(style: :secondary, size: :sm) + ["shrink-0", "inline-flex", "items-center", "gap-1.5", "no-underline"],
+          rel: "noopener",
+          target: "_blank"
+        ) do %>
+          Get started
+          <svg aria-hidden="true" class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7 17 17 7m0 0H8.5M17 7v8.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+          </svg>
+          <span class="sr-only">(opens uchiadmin.com in a new tab)</span>
+        <% end %>
+      </div>
     </div>
   </main>
 <% end %>
