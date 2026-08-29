@@ -10,7 +10,9 @@ module Uchi
 
           Field::String.new(:name)
             .on(:index, :show)
-            .searchable(false)
+            .searchable(lambda { |query, term|
+              query.where("CONCAT(first_name, ' ', last_names) LIKE ?", "%#{term}%")
+            })
             .sortable(lambda { |query, direction|
               query.order(first_name: direction, last_names: direction)
             }),
@@ -18,7 +20,12 @@ module Uchi
           Field::String.new(:last_names).on(:edit, :new),
 
           Field::HasMany.new(:companies),
-          Field::HasMany.new(:roles),
+          Field::HasMany.new(:roles).searchable(lambda { |query, term|
+            query
+            .joins(:roles)
+            .where("roles.title LIKE ?", "%#{term}%")
+            .distinct
+          }),
           Field::HasMany.new(:phone_numbers)
         ]
       end
