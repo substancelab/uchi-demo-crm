@@ -1,0 +1,1 @@
+This document is a placeholder contract used for seeding demo data.

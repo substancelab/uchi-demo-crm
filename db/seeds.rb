@@ -15,16 +15,23 @@ LEADS = 7
 PEOPLE = 15
 PHONE_NUMBERS = 22
 ROLES = 12
+TAGS = [ "Enterprise", "SMB", "Prospect", "Partner", "Churned" ]
 
 # Clean out the existing data
-[ Role, Person, Company, Contact, Lead, User ].each(&:destroy_all)
+[ Role, Person, Company, Contact, Lead, Tag, User ].each(&:destroy_all)
+
+# Create Tags
+tags = TAGS.map { |name| Tag.create!(name: name) }
 
 # Create Companies
 COMPANIES.times do
   Company.create!(
     logo: File.open(Rails.root.join("test", "fixtures", "files", "logos", "#{rand(1..12)}.png")),
     name: Faker::Company.unique.name,
-    tagline: Faker::Company.catch_phrase
+    tagline: Faker::Company.catch_phrase,
+    employees_count: Faker::Number.between(from: 1, to: 5_000),
+    active: [ true, true, true, false ].sample,
+    tags: tags.sample(rand(0..2))
   )
 end
 
@@ -42,7 +49,8 @@ PHONE_NUMBERS.times do
 
   PhoneNumber.create!(
     owner: person,
-    number: Faker::PhoneNumber.phone_number
+    number: Faker::PhoneNumber.phone_number,
+    verified_at: [ true, false ].sample ? Faker::Time.backward(days: 30) : nil
   )
 end
 
@@ -84,7 +92,8 @@ Company.all.each do |company|
       company: company,
       name: Faker::App.unique.name,
       starts_on: Faker::Date.backward(days: 100),
-      ends_on: Faker::Date.forward(days: 100)
+      ends_on: Faker::Date.forward(days: 100),
+      contract: [ true, false ].sample ? File.open(Rails.root.join("test", "fixtures", "files", "contract.txt")) : nil
     )
   end
 end
@@ -95,7 +104,8 @@ PHONE_NUMBERS.times do
 
   PhoneNumber.create!(
     owner: company,
-    number: Faker::PhoneNumber.phone_number
+    number: Faker::PhoneNumber.phone_number,
+    verified_at: [ true, false ].sample ? Faker::Time.backward(days: 30) : nil
   )
 end
 
