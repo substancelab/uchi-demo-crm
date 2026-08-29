@@ -68,7 +68,8 @@ end
 
 gem "faker"
 
-gem "uchi", github: "substancelab/uchi"
+# gem "uchi", github: "substancelab/uchi"
+gem "uchi", source: "https://gems.uchiadmin.com"
 
 # This is used for styling the login pages
 gem "flowbite-components"
