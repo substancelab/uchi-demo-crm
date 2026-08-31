@@ -25,14 +25,16 @@ tags = TAGS.map { |name| Tag.create!(name: name) }
 
 # Create Companies
 COMPANIES.times do
-  Company.create!(
-    logo: File.open(Rails.root.join("test", "fixtures", "files", "logos", "#{rand(1..12)}.png")),
-    name: Faker::Company.unique.name,
-    tagline: Faker::Company.catch_phrase,
-    employees_count: Faker::Number.between(from: 1, to: 5_000),
-    active: [ true, true, true, false ].sample,
-    tags: tags.sample(rand(0..2))
-  )
+  File.open(Rails.root.join("test", "fixtures", "files", "logos", "#{rand(1..12)}.png")) do |logo|
+    Company.create!(
+      logo: logo,
+      name: Faker::Company.unique.name,
+      tagline: Faker::Company.catch_phrase,
+      employees_count: Faker::Number.between(from: 1, to: 5_000),
+      active: [ true, true, true, false ].sample,
+      tags: tags.sample(rand(0..2))
+    )
+  end
 end
 
 # Create people
@@ -88,13 +90,25 @@ end
 # Create projects for companies
 Company.all.each do |company|
   rand(1..3).times do
-    Project.create!(
-      company: company,
-      name: Faker::App.unique.name,
-      starts_on: Faker::Date.backward(days: 100),
-      ends_on: Faker::Date.forward(days: 100),
-      contract: [ true, false ].sample ? File.open(Rails.root.join("test", "fixtures", "files", "contract.txt")) : nil
-    )
+    if [ true, false ].sample
+      File.open(Rails.root.join("test", "fixtures", "files", "contract.txt")) do |contract|
+        Project.create!(
+          company: company,
+          name: Faker::App.unique.name,
+          starts_on: Faker::Date.backward(days: 100),
+          ends_on: Faker::Date.forward(days: 100),
+          contract: contract
+        )
+      end
+    else
+      Project.create!(
+        company: company,
+        name: Faker::App.unique.name,
+        starts_on: Faker::Date.backward(days: 100),
+        ends_on: Faker::Date.forward(days: 100),
+        contract: nil
+      )
+    end
   end
 end
 
