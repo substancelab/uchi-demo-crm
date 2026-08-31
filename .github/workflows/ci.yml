@@ -5,6 +5,9 @@ on:
   push:
     branches: [ main ]
 
+env:
+  BUNDLE_GEMS__UCHIADMIN__COM: ${{ secrets.BUNDLE_GEMS__UCHIADMIN__COM }}
+
 jobs:
   scan_ruby:
     runs-on: ubuntu-latest
