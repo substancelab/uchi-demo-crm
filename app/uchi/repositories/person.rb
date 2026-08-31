@@ -18,6 +18,7 @@ module Uchi
             }),
           Field::String.new(:first_name).on(:edit, :new),
           Field::String.new(:last_names).on(:edit, :new),
+          Field::Blank.new(:spacer).on(:edit, :new),
 
           Field::HasMany.new(:companies),
           Field::HasMany.new(:roles).searchable(lambda { |query, term|

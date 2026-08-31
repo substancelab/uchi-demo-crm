@@ -10,7 +10,8 @@ module Uchi
           Field::String.new(:number).searchable(lambda { |query, term|
             term = term.tr(" ().-", "")
             query.where("REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(number, ' ', ''), '-', ''), '(', ''), ')', ''), '.', '') LIKE ?", "%#{term}%")
-          })
+          }),
+          Field::DateTime.new(:verified_at)
         ]
       end
 

@@ -13,7 +13,8 @@ module Uchi
           Field::BelongsTo.new(:company),
           Field::String.new(:name),
           Field::Date.new(:starts_on),
-          Field::Date.new(:ends_on)
+          Field::Date.new(:ends_on),
+          Field::File.new(:contract)
         ]
       end
     end

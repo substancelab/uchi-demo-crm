@@ -29,6 +29,9 @@ module Uchi
                 ]
               }
             ),
+          Field::Number.new(:employees_count),
+          Field::Boolean.new(:active),
+          Field::HasAndBelongsToMany.new(:tags),
           Field::HasMany.new(:people),
           Field::HasMany.new(:projects),
           Field::HasMany.new(:phone_numbers)
