@@ -1,5 +1,5 @@
 module Uchi
-  class ApplicationController < ActionController::Base
+  class ApplicationController < Uchi::Controller
     include Authentication
 
     # before_action { raise "OMG" }
