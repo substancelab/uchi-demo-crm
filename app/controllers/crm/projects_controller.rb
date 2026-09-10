@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module Uchi
+module Crm
   class ProjectsController < Uchi::RepositoryController
   end
 end

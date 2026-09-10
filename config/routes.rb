@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
-  Uchi.routes.mount(self)
+  Uchi.routes.mount(self, at: "crm")
 
   # Authentication routes
   resource :session
@@ -15,5 +15,5 @@ Rails.application.routes.draw do
   # get "service-worker" => "rails/pwa#service_worker", as: :pwa_service_worker
 
   # Defines the root path route ("/")
-  root "uchi/companies#index"
+  root "crm/companies#index"
 end

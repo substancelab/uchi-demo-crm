@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module Uchi
+module Crm
   class PeopleController < Uchi::RepositoryController
   end
 end
