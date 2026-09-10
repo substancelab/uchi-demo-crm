@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module Uchi
+module Crm
   class RolesController < Uchi::RepositoryController
   end
 end

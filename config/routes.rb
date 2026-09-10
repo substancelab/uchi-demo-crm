@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
-  Uchi.routes.mount(self)
+  Uchi.routes.mount(self, at: "crm")
 
   # Authentication routes
   resource :session
