@@ -1,7 +1,7 @@
-GEM
-  remote: https://gems.uchiadmin.com/
+PATH
+  remote: ../../uchi
   specs:
-    uchi (0.3.1)
+    uchi (0.4.0)
       rails (>= 7.2)
       turbo-rails
       view_component (>= 4.0)

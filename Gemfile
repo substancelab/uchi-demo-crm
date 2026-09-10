@@ -69,7 +69,15 @@ end
 gem "faker"
 
 # gem "uchi", github: "substancelab/uchi"
-gem "uchi", source: "https://gems.uchiadmin.com"
+# gem "uchi", source: "https://gems.uchiadmin.com"
+
+# This is for local development and testing using puma-dev to serve the gem server.
+#
+# Run bundle install with:
+#
+#     $ SSL_CERT_FILE=~/Library/Application\ Support/io.puma.dev/cert.pem bundle install                                                           main●
+# gem "uchi", source: "https://gems.uchiadmin.test"
+gem "uchi", path: "../../uchi"
 
 # This is used for styling the login pages
 gem "flowbite-components"
