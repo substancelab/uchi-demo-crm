@@ -2,4 +2,5 @@
 
 every 1.hour do
   rake "db:seed"
+  runner "ActiveStorage::Blob.unattached.find_each(&:purge)"
 end
