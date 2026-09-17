@@ -16,9 +16,9 @@ module Uchi
             .sortable(lambda { |query:, direction:|
               query.order(first_name: direction, last_names: direction)
             }),
-          Field::String.new(:first_name).on(:edit, :new),
-          Field::String.new(:last_names).on(:edit, :new),
-          Field::Blank.new(:spacer).on(:edit, :new),
+          Field::String.new(:first_name).on(View::EDIT),
+          Field::String.new(:last_names).on(View::FORM),
+          Field::Blank.new(:spacer).on(View::FORM),
 
           Field::HasMany.new(:companies),
           Field::HasMany.new(:roles).searchable(lambda { |query:, term:|
