@@ -4,7 +4,7 @@ module Uchi
   module Repositories
     class Company < Repository
       def actions
-        [
+        super + [
           Uchi::Actions::Companies::GenerateTagline.new
         ]
       end

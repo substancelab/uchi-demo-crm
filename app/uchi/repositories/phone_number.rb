@@ -7,7 +7,7 @@ module Uchi
         [
           Field::Id.new(:id),
           Field::BelongsTo.new(:owner).sortable(false),
-          Field::String.new(:number).searchable(lambda { |query, term|
+          Field::String.new(:number).searchable(lambda { |query:, term:|
             term = term.tr(" ().-", "")
             query.where("REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(number, ' ', ''), '-', ''), '(', ''), ')', ''), '.', '') LIKE ?", "%#{term}%")
           }),
