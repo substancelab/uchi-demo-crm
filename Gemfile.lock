@@ -125,6 +125,7 @@ GEM
       tzinfo
     faker (3.8.0)
       i18n (>= 1.8.11, < 2)
+    ffi (1.17.4)
     ffi (1.17.4-aarch64-linux-gnu)
     ffi (1.17.4-aarch64-linux-musl)
     ffi (1.17.4-arm-linux-gnu)
@@ -448,4 +449,4 @@ DEPENDENCIES
   whenever
 
 BUNDLED WITH
-   2.7.2
+  4.0.23
