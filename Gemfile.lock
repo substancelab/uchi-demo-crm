@@ -381,7 +381,7 @@ GEM
       concurrent-ruby (~> 1.0)
     unicode-display_width (3.2.0)
       unicode-emoji (~> 4.1)
-    unicode-emoji (4.1.0)
+    unicode-emoji (4.3.0)
     uri (1.1.2)
     useragent (0.16.11)
     view_component (4.16.0)
@@ -409,6 +409,7 @@ PLATFORMS
   aarch64-linux-musl
   arm-linux-gnu
   arm-linux-musl
+  arm64-darwin-23
   arm64-darwin-24
   x86_64-linux
   x86_64-linux-gnu
